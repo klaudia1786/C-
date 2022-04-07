@@ -1,0 +1,366 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace tek
+{
+    internal class Class1
+    {
+
+        static void Main(string[] args)
+        {
+
+          
+            /*Krijoni nje program i cili tregon nese nje numer i plote i dhene nga perdoruesi eshte tek ose cift. 
+             Ne rast se perdoruesi nuk ka vendosur nje numer, te afishohet mesazhi perkates.*/
+
+
+           Console.WriteLine("Ju lutem vendoni nje numer ");
+
+            string strInput ;
+           
+            int number;
+
+           if (int.TryParse(Console.ReadLine(), out number))
+            {
+                if (number % 2 == 0)
+                {
+
+                    Console.WriteLine("Numri i dhene eshte cift");
+                  }
+                else
+                {
+                    Console.WriteLine("Numri i dhene eshte tek");
+                }
+            }
+            else
+                Console.WriteLine(" Variabli nuk eshte ne formatin int ");
+        }
+    }
+}
+   /* ////////////////////////////////////////////////////////////////////////////////// */
+   
+   
+   using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LeapYear
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            /*Te krijohet nje program i cili tregon nese nje vit (i dhene nga perdoruesi), eshte vit i brishte ose jo
+               Viti quhet i brishte kur:
+              Plotpjestohet me 400, 100 dhe 4 njekohesisht*/
+
+            Console.WriteLine("Vendosni nje Vit ");
+
+            int viti;
+            int.TryParse(Console.ReadLine(),out viti);
+
+            Boolean isLeapYear = (viti % 4 == 0 && viti % 100 != 0) || (viti % 400 == 0);
+            Console.WriteLine(viti + " eshte  vit i brishte? " + isLeapYear);
+
+   }
+  }
+}
+  /* ////////////////////////////////////////////////////////////////////////////////// */
+   
+   using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Quadrant
+{
+    internal class Class1
+    {
+        static void Main(string[]args)
+        {
+            /*Duke ditur koordinatat e nje pike (x,y) te lexuara nga perdoruesi, krijoni nje program,
+             * i cili afishon se ne cilin prej kuadranteve ndodhet ajo pike.
+             */
+            Console.WriteLine("Jepni kordinaten X te pikes:");
+
+            int x = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Jep kordinaten Y te pikes:");
+
+            int y = Convert.ToInt32(Console.ReadLine());
+
+            if (x > 0 && y > 0)
+            {
+                Console.WriteLine("Pika ndodhet ne kuadrantin e pare");
+            }
+            else if (x < 0 && y > 0)
+            {
+                Console.WriteLine("Pika ndodhet ne kuadrantin e dyte");
+            }
+            else if (x < 0 && y < 0)
+            {
+                Console.WriteLine("Pika ndodhet ne kuadrantin e trete");
+            }
+
+            else
+                Console.WriteLine("Pika ndodhet ne kuadrantin e katert");
+        }
+
+    }
+}
+
+  /* ////////////////////////////////////////////////////////////////////////////////// */
+  
+   using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace quadraticRoots
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            /*Krijoni nje program i cili gjen rrenjet e ekuacionit kuadratik y = ax^2 + bx + c, 
+             * ku a,b,c jepen nga perdoruesi.*/
+
+
+
+            Console.WriteLine("Ju lutem vensosni parametrat a,b,c te ekuacionit");
+
+            double a, b, c;
+
+            double.TryParse(Console.ReadLine(), out a);
+            double.TryParse(Console.ReadLine(), out b);
+            double.TryParse(Console.ReadLine(), out c);
+
+            double rrenja1, rrenja2;
+            double dallori = b * b - 4 * a * c;
+
+            if (dallori > 0)
+            {
+
+                rrenja1 = (-b + Math.Sqrt(dallori)) / (2 * a);
+                rrenja2 = (-b - Math.Sqrt(dallori)) / (2 * a);
+
+                Console.WriteLine("Rrenjet jane: " + rrenja1.ToString("N2") + " dhe  " + rrenja2.ToString("N2"));
+
+            }
+            else if (dallori == 0)
+            {
+
+                rrenja1 = rrenja2 = -b / (2 * a);
+                Console.WriteLine("Rrenjet jane te barabarta : " + rrenja1.ToString("N2"));
+
+            }
+            else
+            {
+
+
+                double real = -b / (2 * a);
+                double imagjinare = Math.Sqrt(-dallori) / (2 * a);
+
+                Console.WriteLine("Rrenja 1 eshte: " + real.ToString("N2") + "+" + imagjinare.ToString("N2") + "i");
+                Console.WriteLine("Rrenja 2 eshte: " + real.ToString("N2") + "-" + imagjinare.ToString("N2") + "i");
+
+            }
+        }
+    }
+}
+ /* ////////////////////////////////////////////////////////////////////////////////// */
+  
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace numrat
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            /*Krijoni nje program i cili perkthen nje numer ne fjale per numrat 1-10,
+             * me tej per cdo dhjeteshe deri ne 100, dhe per cdo njeqindeshe deri ne 1000*/
+            
+            
+            Console.WriteLine("Jepni nje numer ");
+            int numri;
+
+            int.TryParse(Console.ReadLine(), out numri);
+
+            switch (numri)
+            {
+                case 1:
+                    Console.WriteLine(numri + " --- nje ");
+                    break;
+                case 2:
+                    Console.WriteLine(numri + " --- dy ");
+                    break;
+                case 3:
+                    Console.WriteLine(numri + " --- tre ");
+                    break;
+
+                case 4:
+                    Console.WriteLine(numri + " --- kater ");
+                    break;
+
+                case 5:
+                    Console.WriteLine(numri + " --- pese ");
+                    break;
+                case 6:
+                    Console.WriteLine(numri + " --- gjashte ");
+                    break;
+                case 7:
+                    Console.WriteLine(numri + " --- shtate ");
+                    break;
+                case 8:
+                    Console.WriteLine(numri + " --- tete ");
+                    break;
+                case 9:
+                    Console.WriteLine(numri + " --- nente ");
+                    break;
+                case 10:
+                    Console.WriteLine(numri + " --- dhjete ");
+                    break;
+                case 20:
+                    Console.WriteLine(numri + " --- njezete ");
+                    break;
+                case 30:
+                    Console.WriteLine(numri + " --- tridhjete ");
+                    break;
+                case 40:
+                    Console.WriteLine(numri + " --- dyzete ");
+                    break;
+                case 50:
+                    Console.WriteLine(numri + " --- pesedhjete ");
+                    break;
+                case 60:
+                    Console.WriteLine(numri + " --- gjashtedhjete ");
+                    break;
+                case 70:
+                    Console.WriteLine(numri + " --- shtatedhjete ");
+                    break;
+                case 80:
+                    Console.WriteLine(numri + " --- tetedhjete ");
+                    break;
+                case 90:
+                    Console.WriteLine(numri + " --- nentedhjete ");
+                    break;
+                case 100:
+                    Console.WriteLine(numri + " --- njqind ");
+                    break;
+                case 200:
+                    Console.WriteLine(numri + " --- dyqind ");
+                    break;
+                case 300:
+                    Console.WriteLine(numri + " --- treqind ");
+                    break;
+                case 400:
+                    Console.WriteLine(numri + " --- katerqind ");
+                    break;
+                case 500:
+                    Console.WriteLine(numri + " --- peseqind ");
+                    break;
+                case 600:
+                    Console.WriteLine(numri + " --- gjashteqind ");
+                    break;
+                case 700:
+                    Console.WriteLine(numri + " --- shtateqind");
+                    break;
+                case 800:
+                    Console.WriteLine(numri + " --- teteqind ");
+                    break;
+                case 900:
+                    Console.WriteLine(numri + " --- nenteqind ");
+                    break;
+                case 1000:
+                    Console.WriteLine(numri + " --- njemije");
+                    break;
+                default:
+                    Console.WriteLine("ju lutem provoni numer tjeter.");
+                    break;
+
+            }
+
+        }
+    }
+}
+ /* ////////////////////////////////////////////////////////////////////////////////// */
+ using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace veprimetAritmetike
+{
+    internal class Class1
+    {
+
+        static void Main(string[] args)
+        {
+            /*Krijoni nje program, i cili ne varesi te zgjedhjes se perdoruesit /, *, -, +, %, 
+                gjen rezultatin e nje veprimi aritmetik te dy numrave te cilat jepen nga po ai. 
+                (Te perdoret struktura switch case per te identifikuar operatorin)*/
+
+
+
+            char operatori;
+            double nr1, nr2, rezultati;
+
+            Console.WriteLine(" Zgjidhni nje operator: +, -, *, / ose %");
+            char.TryParse(Console.ReadLine(), out operatori);
+
+            Console.WriteLine("Vedosni numrin e pare:");
+            double.TryParse(Console.ReadLine(), out nr1);
+
+            Console.WriteLine("Vedosni numrin e dyet:");
+            double.TryParse(Console.ReadLine(), out nr2);
+
+            switch (operatori) {
+
+
+                case '+':
+                    rezultati = nr1 + nr2;
+                    Console.WriteLine(nr1 + " + " + nr2 + " = " + rezultati);
+                    break;
+
+                case '-':
+                    rezultati = nr1 - nr2;
+                    Console.WriteLine(nr1 + " - " + nr2 + " = " + rezultati);
+                    break;
+
+                case '*':
+                    rezultati = nr1 * nr2;
+                    Console.WriteLine(nr1 + " + " + nr2 + " * " + rezultati);
+                    break;
+
+                case '/':
+                    rezultati = nr1 / nr2;
+                    Console.WriteLine(nr1 + " / " + nr2 + " = " + rezultati);
+                    break;
+
+                case '%':
+                    rezultati = nr1 % nr2;
+                    Console.WriteLine(nr1 + " % " + nr2 + " = " + rezultati);
+                    break;
+                default:
+                    Console.WriteLine("Ju keni zgjedhur operatorin e gabuar");
+                        break;
+
+
+            }
+
+        }
+    } 
+}
